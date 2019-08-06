@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidDaggerSample</string>
+    <string name="button_detail">Go to see detail!!</string>
+</resources>
