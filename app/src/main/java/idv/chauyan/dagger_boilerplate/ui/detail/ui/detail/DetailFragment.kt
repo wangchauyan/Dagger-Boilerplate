@@ -8,13 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import idv.chauyan.androiddaggersample.R
 import idv.chauyan.dagger_boilerplate.di.Injectable
-import idv.chauyan.dagger_boilerplate.model.Car
+import idv.chauyan.dagger_boilerplate.model.car.Mercedes
 import kotlinx.android.synthetic.main.detail_fragment.*
 import javax.inject.Inject
 
 class DetailFragment : Fragment(), Injectable {
 
-    @Inject lateinit var car: Car
+    //@Inject lateinit var car: Mercedes
 
     companion object {
         fun newInstance() = DetailFragment()
@@ -38,6 +38,6 @@ class DetailFragment : Fragment(), Injectable {
     override fun onResume() {
         super.onResume()
 
-        message.text = car.getModelDetail()
+        //message.text = car.getModelDetail()
     }
 }

@@ -5,11 +5,15 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.support.AndroidSupportInjectionModule
 import idv.chauyan.dagger_boilerplate.SampleApplication
+import idv.chauyan.dagger_boilerplate.model.di.EngineComponent
 import idv.chauyan.dagger_boilerplate.ui.detail.DetailActivityModule
 import idv.chauyan.dagger_boilerplate.ui.main.MainActivityModule
 
 
 @Component(
+    dependencies = [
+        EngineComponent::class
+    ],
     modules = [
         // handle android components injection
         AndroidInjectionModule::class,
@@ -17,9 +21,7 @@ import idv.chauyan.dagger_boilerplate.ui.main.MainActivityModule
         AndroidSupportInjectionModule::class,
         // add activity builder module
         MainActivityModule::class,
-        DetailActivityModule::class,
-        // add resource module
-        ResourceModule::class
+        DetailActivityModule::class
     ]
 )
 interface ApplicationComponent {
@@ -28,6 +30,7 @@ interface ApplicationComponent {
     interface Builder {
         @BindsInstance
         fun application(application: SampleApplication): Builder
+        fun engine(engineComponent: EngineComponent): Builder
 
         fun build(): ApplicationComponent
     }

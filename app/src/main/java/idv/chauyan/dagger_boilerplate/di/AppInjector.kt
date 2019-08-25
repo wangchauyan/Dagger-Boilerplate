@@ -9,12 +9,14 @@ import androidx.fragment.app.FragmentManager
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import idv.chauyan.dagger_boilerplate.SampleApplication
+import idv.chauyan.dagger_boilerplate.model.di.DaggerPetrolEngineComponent
 
 object AppInjector {
 
     fun inject(application: SampleApplication) {
         val applicationComponent = DaggerApplicationComponent.builder()
             .application(application)
+            .engine(DaggerPetrolEngineComponent.create())
             .build()
 
         applicationComponent.inject(application)
