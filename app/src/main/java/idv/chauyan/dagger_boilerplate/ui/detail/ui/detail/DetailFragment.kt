@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class DetailFragment : Fragment(), Injectable {
 
-    //@Inject lateinit var car: Mercedes
+    @Inject lateinit var car: Mercedes
 
     companion object {
         fun newInstance() = DetailFragment()
@@ -38,6 +38,6 @@ class DetailFragment : Fragment(), Injectable {
     override fun onResume() {
         super.onResume()
 
-        //message.text = car.getModelDetail()
+        message.text = car.getModelDetail()
     }
 }
