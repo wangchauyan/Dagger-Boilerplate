@@ -21,7 +21,8 @@ object AppInjector {
 
         applicationComponent.inject(application)
 
-        application.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
+        application.registerActivityLifecycleCallbacks(object :
+            Application.ActivityLifecycleCallbacks {
             override fun onActivityCreated(
                 activity: Activity,
                 savedInstanceState: Bundle?
